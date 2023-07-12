@@ -11,11 +11,11 @@ urlpatterns = [
 
     re_path(r'^$', index),
     re_path(r'^health$', health),
-    re_path(r'^admin/', include(admin.site.urls)),
+    re_path(r'^admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
     import debug_toolbar
     urlpatterns = [
-        re_path(r'^__debug__/', include(debug_toolbar.urls)),
+        re_path(r'^__debug__/', debug_toolbar.urls),
     ] + urlpatterns
